@@ -1,0 +1,36 @@
+extends layout
+
+block content
+    .container
+        h2.text-center Add New Movie
+        form.form-horizontal(action='#', method='post')
+            .form-group
+                label.control-label.col-sm-2(for='movieName') Movie Name:
+                .col-sm-10
+                    input.form-control(type='text', placeholder='Enter movie name', name='movie_name')
+            .form-group
+                label.control-label.col-sm-2(for='releaseYear') Year of Release:
+                .col-sm-10
+                    input.form-control(type='text', placeholder='Enter movie release year', name='release_year')
+            .form-group
+                label.control-label.col-sm-2(for='plot') Plot:
+                .col-sm-10
+                    textarea.form-control(placeholder='Enter movie plot', name='plot')
+            .form-group
+                label.control-label.col-sm-2(for='poster') Poster:
+                .col-sm-10
+                    input.btn.btn-success(type='file', placeholder='image', name='poster')
+            .form-group
+                label.control-label.col-sm-2(for='cast') Cast:
+                .col-sm-8
+                    select.form-control(placeholder='cast', name='cast')
+                        option A
+                        option B
+                .col-sm-2
+                    button.btn.btn-success(type='button', data-toggle='modal', data-target='#myModal') + Actor
+            .form-group
+                .col-sm-offset-2.col-sm-10
+                    button.btn.btn-success(type='submit') Submit
+                    button.btn.btn-default(type='reset') Cancel
+    
+    include ./partials/_modal.pug

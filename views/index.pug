@@ -1,0 +1,35 @@
+extends layout
+
+block content
+    .container
+        h3 Top 10 Movies 2018
+        a.btn.btn-success(href='/addmovie') + Movie
+        br
+        br
+        .table-responsive
+            table.table.table-bordered
+                thead
+                    tr
+                        th Poster
+                        th MoviesName
+                        th Year of Release
+                        th Plot
+                        th Cast
+                        th Edit
+                tbody
+                    tr
+                        td.text-center 
+                            img(src="https://via.placeholder.com/100x150", alt="image", srcset="")
+                        td Anna
+                        td 2018
+                        td 35
+                        td New York
+                        td Edit btn
+                    tr
+                        td.text-center 
+                            img(src="https://via.placeholder.com/100x150", alt="image", srcset="")
+                        td Anna
+                        td 2018
+                        td 35
+                        td New York
+                        td Edit btn

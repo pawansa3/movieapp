@@ -1,0 +1,35 @@
+#myModal.modal.fade(role='dialog')
+    .modal-dialog.modal-lg
+        .modal-content
+            .modal-header
+                button.close(type='button', data-dismiss='modal') ×
+                h4.modal-title Add Actor
+            form.form-horizontal(action='#', method='post')
+                .modal-body
+                    .form-group
+                        label.control-label.col-sm-2(for='actorName') Actor Name:
+                        .col-sm-10
+                            input.form-control(type='text', placeholder='Enter actor name', name='actor_name')
+                    .form-group
+                        label.control-label.col-sm-2(for='sex') Sex:
+                        .col-sm-10
+                            label.radio-inline
+                                input(type='radio', name='sex', checked='')
+                                | Male
+                            label.radio-inline
+                                input(type='radio', name='sex')
+                                | Female
+                            label.radio-inline
+                                input(type='radio', name='sex')
+                                | Other
+                    .form-group
+                        label.control-label.col-sm-2(for='dob') Date of Birth:
+                        .col-sm-10
+                            input.form-control(type='date', name='dob')
+                    .form-group
+                        label.control-label.col-sm-2(for='bio') Bio:
+                        .col-sm-10
+                            textarea.form-control(placeholder='Enter actor Bio', name='bio')
+                .modal-footer
+                    button.btn.btn-default(type='reset') Cancel
+                    button.btn.btn-success(type='submit') Done

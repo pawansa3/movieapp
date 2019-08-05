@@ -1,0 +1,24 @@
+block header
+    nav.navbar.navbar-inverse.navbar-static-top
+        .container-fluid
+            .navbar-header
+                button.navbar-toggle(type='button', data-toggle='collapse', data-target='#myNavbar')
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand(href='#') WebSiteName
+            #myNavbar.collapse.navbar-collapse
+                ul.nav.navbar-nav
+                    li.active
+                        a(href='#') Movies
+                    li
+                        a(href='#') Tv Shows
+                    li
+                        a(href='#') Celebrities
+                    li
+                        a(href='#') Watch List
+                ul.nav.navbar-nav.navbar-right
+                    form.navbar-form.navbar-left(action='/action_page.php')
+                        .form-group
+                            input.form-control(type='text', placeholder='Search', name='search')
+                        button.btn.btn-default(type='submit') Submit
