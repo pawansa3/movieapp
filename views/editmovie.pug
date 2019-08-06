@@ -2,36 +2,38 @@ extends layout
 
 block content
     .container
-        h2.text-center Add New Movie
-        form.form-horizontal(action='/addmovie', method='post'  enctype="multipart/form-data")
+        h2.text-center Edit Movie
+        form.form-horizontal(action=`/editmovie/${movie._id}`, method='post'  enctype="multipart/form-data")
             .form-group
                 label.control-label.col-sm-2(for='movieName') Movie Name:
                 .col-sm-10
-                    input.form-control(type='text', placeholder='Enter movie name', name='movie_name')
+                    input.form-control(type='text', value=movie.movie_name placeholder='Enter movie name', name='movie_name')
             .form-group
                 label.control-label.col-sm-2(for='releaseYear') Year of Release:
                 .col-sm-10
-                    input.form-control(type='text', placeholder='Enter movie release year', name='release_year')
+                    input.form-control(type='text', value=movie.release_year placeholder='Enter movie release year', name='release_year')
             .form-group
                 label.control-label.col-sm-2(for='plot') Plot:
                 .col-sm-10
-                    textarea.form-control(placeholder='Enter movie plot', name='plot')
+                    textarea.form-control(placeholder='Enter movie plot', name='plot' rows="4")=movie.plot
             .form-group
                 label.control-label.col-sm-2(for='poster') Poster:
-                .col-sm-10
-                    input.form-control(type='file', placeholder='image', name='poster')
+                .col-sm-5
+                    input.form-control(type='file', placeholder='image', name='poster' accept="image/gif, image/png, image/jpeg")
+                .col-sm-5 
+                    img(src=`/uploads/${movie.poster}`, alt=movie.movie_name width=80)
             .form-group
                 label.control-label.col-sm-2(for='cast') Cast:
                 .col-sm-10
                     select#example-getting-started(multiple='multiple' name="cast")
                         each actor in actors
                             option(value=`${actor._id}`) #{actor.actor_name}
-
                     |  
                     button.btn.btn-success(type='button', data-toggle='modal', data-target='#myModal') + Actor
             .form-group
                 .col-sm-offset-2.col-sm-10
                     button.btn.btn-success(type='submit') Submit
+                    | 
                     button.btn.btn-default(type='reset') Cancel
     
     include ./partials/_modal.pug

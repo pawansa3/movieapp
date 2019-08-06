@@ -4,7 +4,7 @@
             .modal-header
                 button.close(type='button', data-dismiss='modal') ×
                 h4.modal-title Add Actor
-            form.form-horizontal(action='#', method='post')
+            form.form-horizontal(action='/addactor', method='post')
                 .modal-body
                     .form-group
                         label.control-label.col-sm-2(for='actorName') Actor Name:
@@ -14,13 +14,13 @@
                         label.control-label.col-sm-2(for='sex') Sex:
                         .col-sm-10
                             label.radio-inline
-                                input(type='radio', name='sex', checked='')
+                                input(type='radio', name='sex', checked='' value="male")
                                 | Male
                             label.radio-inline
-                                input(type='radio', name='sex')
+                                input(type='radio', name='sex' value="female")
                                 | Female
                             label.radio-inline
-                                input(type='radio', name='sex')
+                                input(type='radio', name='sex' value="other")
                                 | Other
                     .form-group
                         label.control-label.col-sm-2(for='dob') Date of Birth:

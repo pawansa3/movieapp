@@ -5,7 +5,9 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         title #{title} | Movie App
-        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css")
+        link(rel="stylesheet", href="http://davidstutz.de/bootstrap-multiselect/dist/css/bootstrap-multiselect.css")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
         link(rel="stylesheet", href="/css/style.css")
     body
         block header
@@ -27,5 +29,13 @@ html(lang="en")
     block footer
 
     block scripts
-        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
-        script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js")
+        script(src="http://davidstutz.de/bootstrap-multiselect/dist/js/bootstrap-multiselect.js")
+        script(type='text/javascript').
+            $(document).ready(function() {
+                $('#example-getting-started').multiselect({
+                    includeSelectAllOption: true,
+                    enableFiltering: true
+                });
+            });

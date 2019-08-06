@@ -5,6 +5,21 @@ const session = require("express-session");
 const flash = require("connect-flash");
 const routes = require("./routes");
 const errorHandlers = require("./handlers/errorHandlers");
+const axios = require("axios");
+
+const mongoose = require("mongoose");
+const mongoURI = "mongodb://localhost:27017/movieapp";
+mongoose.connect(process.env.DATABASE || mongoURI, {
+  useNewUrlParser: true,
+  useCreateIndex: true
+});
+mongoose.Promise = global.Promise;
+mongoose.connection.on("error", err =>
+  console.error(`DB error: ${err.message}`)
+);
+
+require("./models/movies");
+require("./models/actors");
 
 const app = express();
 

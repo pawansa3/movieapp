@@ -1,0 +1,20 @@
+extends layout
+
+block content
+    .container
+        h3.text-center Actor and Actress
+        .table-responsive
+            table.table.table-bordered
+                thead
+                    tr
+                        th Actor Name
+                        th Gender
+                        th DOB
+                        th Bio
+                tbody
+                    each actor in actors
+                        tr
+                            td #{actor.actor_name}
+                            td #{actor.sex}
+                            td #{actor.dob}
+                            td #{actor.bio}

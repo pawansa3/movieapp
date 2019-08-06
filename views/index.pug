@@ -17,19 +17,21 @@ block content
                         th Cast
                         th Edit
                 tbody
-                    tr
-                        td.text-center 
-                            img(src="https://via.placeholder.com/100x150", alt="image", srcset="")
-                        td Anna
-                        td 2018
-                        td 35
-                        td New York
-                        td Edit btn
-                    tr
-                        td.text-center 
-                            img(src="https://via.placeholder.com/100x150", alt="image", srcset="")
-                        td Anna
-                        td 2018
-                        td 35
-                        td New York
-                        td Edit btn
+                    each movie in movies
+                        tr
+                            td.text-center 
+                                img(src=`/uploads/${movie.poster}`, alt="image", srcset="")
+                            td #{movie.movie_name}
+                            td #{movie.release_year}
+                            td #{movie.plot}
+                            td 
+                                each actor in movie.cast
+                                    span=actor.actor_name
+                                    |, 
+                            td 
+                                .gridbox
+                                    a.btn.btn-default(href=`/editmovie/${movie._id}`) 
+                                        i.fa.fa-pencil
+                                    form(action=`/deletemovie/${movie._id}`, method="post")
+                                        button.btn.btn-danger(type="submit")
+                                            i.fa.fa-trash
